@@ -4,6 +4,6 @@ const Auth = require("../controller/authController");
 const authenticate = require("../middlewares/autentikasi");
 
 router.post("/login", Auth.login);
-router.get("/authenticate", authenticate, Auth.authenticate);
+router.get("/authMe", authenticate, Auth.authenticate);
 
 module.exports = router;

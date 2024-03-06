@@ -4,10 +4,12 @@ const { Op } = require("sequelize");
 
 const getAllUser = async (req, res, next) => {
   try {
-    const user = await User.findAll();
+    const user = await User.findAll({
+      include: "Auth",
+    });
     res.status(200).json({
       status: "Success",
-      data: user,
+      user,
     });
   } catch (err) {
     next(new ApiError(err.message, 500));

@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "havyEquipmentId",
         allowNull: false,
       });
-      HavyEquipment.belongsToMany(models.Service, {
+      HavyEquipment.belongsTo(models.Service, {
         foreignKey: "serviceId",
         allowNull: false,
       });
